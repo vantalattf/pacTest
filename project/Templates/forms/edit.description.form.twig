@@ -1,0 +1,10 @@
+{# Форма для редактирования описания лайнера #}
+<div class="js-parent-block">
+    <h4 class="mb20">Редактируем {{ title }}</h4>
+    <div class="row mb30">
+        <textarea class="edit-description js-edit-description">{{ description }}</textarea>
+    </div>
+    <div class="row center">
+        <button class="btn btn-success" onclick="edit.descriptionSave(this);" data-id="{{ id }}" data-type="{{ type }}" data-place="{{ place }}">Сохранить</button>
+    </div>
+</div>

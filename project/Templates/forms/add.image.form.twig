@@ -1,0 +1,44 @@
+{# Форма для добавления изображения #}
+<div class="js-parent-block">
+    <h4 class="mb20">Редактируем {{ title }}</h4>
+    <div class="width100p mb30">
+        <form enctype="multipart/form-data">
+            <table class="width100p td5">
+                <tr>
+                    <td class="width40p">
+                        Принадлежность лайнеру
+                    </td>
+                    <td>
+                        <select name="shipId" class="width100p">
+                            <option></option>
+                            {% for ship in shipReference %}
+                                <option value="{{ ship.id }}">{{ ship.title }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Подпись к изображению
+                    </td>
+                    <td>
+                        <input type="text" name="title" maxlength="255" class="width100p">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Укажите веб-ссылку или выберите файл на компьютере
+                        (если будет выбран файл, то приоритет добавления на нем)
+                    </td>
+                    <td>
+                        <p>Ссылка: <input type="text" name="url" maxlength="1000" class="width70p"></p>
+                        <p>Файл: <input type="file" name="file" accept="image/jpeg,image/png"></p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="width100p center">
+        <button class="btn btn-success" onclick="image.addImage(this);">Сохранить</button>
+    </div>
+</div>

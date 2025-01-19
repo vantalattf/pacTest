@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h2 class="mb30">Список Категорий кают</h2>
+    <div class="container-fluid">
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <td>Наименование лайнера</td>
+                <td>Наименование категории каюты</td>
+                <td>Описание</td>
+                <td>Фотографии</td>
+            </tr>
+            {% for item in data %}
+                <tr>
+                    <td class="width20p">
+                        <a href="/ship/detail/{{ item.ship_id }}" target="_blank">
+                            {{ item.ship_title }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/category/detail/{{ item.id }}">{{ item.title }}</a>
+                    </td>
+                    <td class="width60p">{{ item.description|raw }}</td>
+                    <td class="width20p">
+                        {% for photo in item.photos %}
+                            <img src="{{ photo }}" alt="" class="pointer" width="200" onclick="showPhoto(this);">
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h2 class="">Список Лайнеров</h2>
+    <div class="container-fluid">
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <td>Наименование лайнера</td>
+                <td>Описание</td>
+                <td>Характеристики</td>
+            </tr>
+            {% for item in data %}
+                <tr>
+                    <td class="width20p">
+                        <a href="/ship/detail/{{ item.id }}">
+                            {{ item.title }}
+                        </a>
+                    </td>
+                    <td class="width60p">{{ item.description|raw }}</td>
+                    <td class="width20p">
+                        {% for element in item.specify %}
+                            {{ element.name }} : {{ element.value }}<br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

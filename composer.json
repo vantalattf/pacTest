@@ -1,0 +1,17 @@
+{
+    "require": {
+        "twig/twig": "^3.18",
+        "irazasyed/telegram-bot-sdk": "^3.14",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "phpmailer/phpmailer": "^6.9",
+      "ext-gd": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "project\\": "project/",
+            "db\\": "db/",
+            "helpers\\": "helpers/"
+        }
+    }
+}

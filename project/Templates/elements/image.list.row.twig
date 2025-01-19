@@ -1,0 +1,13 @@
+<tr class="js-parent-row">
+    <td>{{ image.ship_title }}</td>
+    <td>{{ image.title }}</td>
+    <td>
+        <span>{{ image.url }}</span>
+    </td>
+    <td>
+        <img src="{{ image.url }}" alt="{{ image.title }}" style="width: 100%;" />
+    </td>
+    <td>
+        <button type="button" class="btn btn-sm btn-danger" onclick="image.deleteImage(this);" data-id="{{ image.id }}">Удалить</button>
+    </td>
+</tr>

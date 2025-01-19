@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <title>PAC</title>
+    {% include 'head.twig' %}
+</head>
+<body class="">
+<header class="h20 mb20">
+    <div class="container-lg">
+        <span class="right-space-20"><a href="/">Лайнеры</a></span>
+        <span class="right-space-20"><a href="/category">Категории кают</a></span>
+        <span><a href="/images">Иллюстрации</a></span>
+    </div>
+</header>
+
+<main class="js-content-main pt40 container-lg">{{ content|raw }}</main>
+
+<footer class="h150">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-3 col-12-mobile">Первая колонка футера</div>
+            <div class="col-3 col-12-mobile">Вторая колонка футера</div>
+            <div class="col-3 col-12-mobile">Третья колонка футера</div>
+            <div class="col-3 col-12-mobile">Четвертая колонка футера</div>
+        </div>
+        <div class="row">
+            <div class="col-3 col-12-mobile">Первая колонка футера</div>
+            <div class="col-3 col-12-mobile">Вторая колонка футера</div>
+            <div class="col-3 col-12-mobile">Третья колонка футера</div>
+            <div class="col-3 col-12-mobile">Четвертая колонка футера</div>
+        </div>
+    </div>
+</footer>
+</body>
+{% include 'modals.twig' %}
+</html>

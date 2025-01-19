@@ -1,0 +1,28 @@
+<div class="container-fluid mb30">
+    <a href="/">На главную</a>
+</div>
+<div class="container-fluid">
+    <h3 class="mb40">Наименование лайнера: {{ data.ship.title }}</h3>
+    <div class="container-fluid mb30 js-item-description">
+        <div class="row mb10 right blue">
+            <span onclick="edit.descriptionForm(this);" data-id="{{ data.ship.id }}" data-type="ship-description" data-place="description" class="pointer">Редактировать</span>
+        </div>
+        <div class="row js-description-place">{{ data.ship.description|raw }}</div>
+    </div>
+    <div class="container-fluid mb30">
+        {% for item in data.ship.specify %}
+            {{ item.name }} : {{ item.value }}<br>
+        {% endfor %}
+    </div>
+    <table class="table">
+        {% for cabin in data.cabins %}
+            <tr>
+                <td>{{ cabin.title }}</td>
+                <td>{{ cabin.description|raw }}</td>
+                <td>
+                    {{ cabin.images }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

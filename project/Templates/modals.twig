@@ -1,0 +1,80 @@
+{# Шаблон для набора модальных окон #}
+<script>
+    let $smallModalContent, $mediumModalContent, $largeModalContent;
+
+    $(function () {
+        $smallModalContent = $('#smallModal').find('.js-small-modal-content');
+        $mediumModalContent = $('#mediumModal').find('.js-medium-modal-content');
+        $largeModalContent = $('#largeModal').find('.js-large-modal-content');
+    });
+
+    const smallModal = new HystModal({
+        linkAttributeName: "data-small_modal",
+        catchFocus: false,
+        closeOnOverlay: true,
+        closeOnEsc: true,
+        afterClose: function(modal){
+            $smallModalContent.html('');
+        },
+    });
+    const mediumModal = new HystModal({
+        linkAttributeName: "data-medium_modal",
+        catchFocus: true,
+        closeOnEsc: true,
+        afterClose: function(modal){
+            $mediumModalContent.html('');
+        },
+    });
+    const largeModal = new HystModal({
+        linkAttributeName: "data-large_modal",
+        catchFocus: true,
+        closeOnEsc: true,
+        afterClose: function(modal){
+            $largeModalContent.html('');
+        },
+    });
+</script>
+{# Малое модальное окно #}
+<div class="hystmodal" id="smallModal" data="small_modal" aria-hidden="true">
+    <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true" style="width: 40%;">
+            <button data-hystclose class="hystmodal__close">Close</button>
+            <div class="js-small-modal-content css-small-modal-content"></div>
+        </div>
+    </div>
+</div>
+
+{# Среднее модальное окно #}
+<div class="hystmodal" id="mediumModal" data="medium_modal" aria-hidden="true">
+    <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true" style="width: 60%;">
+            <button data-hystclose class="hystmodal__close">Close</button>
+            <div class="js-medium-modal-content css-medium-modal-content"></div>
+        </div>
+    </div>
+</div>
+
+{# Большое модальное окно #}
+<div class="hystmodal" id="largeModal" data="large_modal" aria-hidden="true">
+    <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true" style="width: 90%;">
+            <button data-hystclose class="hystmodal__close">Close</button>
+            <div class="js-large-modal-content css-large-modal-content"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .hystmodal__window {
+        background-color: #eee;
+    }
+    .css-small-modal-content {
+        padding: 30px;
+    }
+
+    .css-medium-modal-content {
+        padding: 30px;
+    }
+    .css-large-modal-content {
+        padding: 30px;
+    }
+</style>

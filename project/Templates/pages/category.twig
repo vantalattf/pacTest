@@ -1,0 +1,18 @@
+<div class="container-fluid mb30">
+    <a href="/category">В список категорий</a>
+</div>
+<div class="container-fluid">
+    <h3 class="mb40">Наименование категории: {{ data.title }}</h3>
+    <div class="container-fluid mb30 js-item-description">
+        <div class="row mb10 right blue">
+            <span onclick="edit.descriptionForm(this);" data-id="{{ data.id }}" data-type="category-description" data-place="description" class="pointer">Редактировать</span>
+        </div>
+        <div class="row js-description-place">{{ data.description|raw }}</div>
+    </div>
+    <div class="container-fluid mb30 js-item-images">
+        <div class="row mb10 right blue">
+            <span onclick="edit.descriptionForm(this);" data-id="{{ data.id }}" data-type="category-images" data-place="images" class="pointer">Редактировать</span>
+        </div>
+        <div class="row js-images-place">{{ data.images|raw }}</div>
+    </div>
+</div>
